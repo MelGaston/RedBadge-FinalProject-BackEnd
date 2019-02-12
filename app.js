@@ -12,9 +12,11 @@ app.use(require("./middleware/headers"));
 
 db.sync();
 app.use(bodyParser.json());
-app.use('/auth', user);
-app.use(require('./middleware/validate-session'))
-app.use('/card', post);
 app.listen(process.env.PORT, function(){
     console.log(`App is listening on ${process.env.PORT}`);
+app.use('/auth', user);
+app.use(require('./middleware/validate-session'))
+app.use('/card', card);
+app.use('/comment', comment);
+
 })

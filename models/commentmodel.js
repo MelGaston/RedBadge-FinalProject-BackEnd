@@ -1,7 +1,7 @@
-module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('comment', {
+module.exports = (sequelize, DataTypes) => {
+    const Comments = sequelize.define('comment', {
         user_id: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         username: {
@@ -17,7 +17,18 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         votes: {
-            type: DataTypes.NUMBER
+            type: DataTypes.INTEGER
         }
     });
+    return Comments
 };
+
+// module.exports = (sequelize, DataTypes) => {
+//     const Comments = sequelize.define("comment", {
+//         user_id:{
+//             type: DataTypes.INTEGER,
+//             allowNull: false
+//         }
+//     })
+//     return Comments
+// }
