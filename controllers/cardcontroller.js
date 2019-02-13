@@ -4,6 +4,7 @@ var sequelize = require('../db');
 let Card = sequelize.import('../models/cardmodel');
 validateSession = require('../middleware/validate-session');
 
+
 router.get('/card', function (req, res) {
 
     Card

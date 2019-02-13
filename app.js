@@ -15,7 +15,6 @@ app.use(bodyParser.json());
 app.listen(process.env.PORT, function(){
     console.log(`App is listening on ${process.env.PORT}`);
 app.use('/auth', user);
-app.use(require('./middleware/validate-session'))
 app.use('/card', card);
 app.use('/comment', comment);
 
