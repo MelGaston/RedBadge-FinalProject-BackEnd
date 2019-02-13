@@ -2,6 +2,10 @@
   "name": "RedBadge-Node-Server",
   "version": "1.0.0",
   "description": "server for RedBadge app",
+  "engines":{
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
