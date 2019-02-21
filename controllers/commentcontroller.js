@@ -52,7 +52,7 @@ router.put('/update/:id', validateSession, (req, res) => {
     },
         {
             where: {
-                user_id: req.user.id
+                id: req.params.id
             }
         })
         .then(
