@@ -6,7 +6,7 @@ validateSession = require('../middleware/validate-session');
 router.get('/comments', validateSession, function (req, res) {
 
     Comments.findAll({
-        order: [ ["createdAt": "ASCE"]]
+        // order: [ ["createdAt": "ASCE"]]
         })
         .then(
             function findAllSuccess(data) {
