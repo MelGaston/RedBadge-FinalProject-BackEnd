@@ -6,6 +6,7 @@ validateSession = require('../middleware/validate-session');
 router.get('/comments', validateSession, function (req, res) {
 
     Comments.findAll({
+        order: [ ["createdAt": "ASCE"]]
         })
         .then(
             function findAllSuccess(data) {
@@ -52,7 +53,8 @@ router.put('/update/:id', validateSession, (req, res) => {
     },
         {
             where: {
-                id: req.params.id
+                id: req.params.id,
+                user_id: req.user.id
             }
         })
         .then(
@@ -74,7 +76,8 @@ router.put('/update/:id', validateSession, (req, res) => {
 router.delete('/remove/:id', validateSession, (req, res) => {
     Comments.destroy({
         where: {
-            id: req.params.id
+            id: req.params.id,
+            user_id: req.user.id
         }
     })
     .then(

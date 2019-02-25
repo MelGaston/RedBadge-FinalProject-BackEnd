@@ -4,7 +4,6 @@ var sequelize = require('../db');
 let Card = sequelize.import('../models/cardmodel');
 validateSession = require('../middleware/validate-session');
 
-
 router.get('/card', function (req, res) {
 
     Card
@@ -70,6 +69,7 @@ router.post('/create', validateSession, (req, res) => {
 router.put('/update/:id', validateSession, (req, res) => {
     Card
         .update({
+            user_id: req.params.id,
             bevName: req.body.carddata.bevName,
             temp: req.body.carddata.temp,
             prepTime: req.body.carddata.prepTime,
