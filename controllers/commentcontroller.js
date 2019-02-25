@@ -6,7 +6,7 @@ validateSession = require('../middleware/validate-session');
 router.get('/comments', validateSession, function (req, res) {
 
     Comments.findAll({
-        order: [ ["createdAt", "ASC"]]
+        // order: [ ["createdAt", "ASC"]]
         })
         .then(
             function findAllSuccess(data) {
@@ -53,8 +53,7 @@ router.put('/update/:id', validateSession, (req, res) => {
     },
         {
             where: {
-                id: req.params.id,
-                user_id: req.user.id
+                id: req.params.id
             }
         })
         .then(

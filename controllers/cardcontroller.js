@@ -81,9 +81,7 @@ router.put('/update/:id', validateSession, (req, res) => {
     },
         {
             where: {
-                id: req.params.id,
-                user_id: req.user.id
-            }
+                id: req.params.id            }
         })
         .then(
             function updateSuccess(card) {
