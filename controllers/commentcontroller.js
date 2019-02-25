@@ -45,7 +45,6 @@ router.post('/create', validateSession, function(req, res) {
 
 router.put('/update/:id', validateSession, (req, res) => {
     Comments.update({
-            user_id: req.user.id,
             username: req.body.commentdata.username,
             comment: req.body.commentdata.comment,
             typeOf: req.body.commentdata.typeOf,
